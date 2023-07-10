@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Slate from "./components/Slate";
 
 function App() {
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState("");
+  const [js, setJs] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="pannel slate">
+        <Slate 
+        language='html'
+        value={html}
+        displayName='HTML'
+        onChange={setHtml}
+        />
+        <Slate 
+        language='css'
+        value={css}
+        displayName='CSS'
+        onChange={setCss}
+        />
+        <Slate
+        language='javascript'
+        value={js}
+        displayName='JS'
+        onChange={setJs}
+        />
+      </div>
+      <div className="pannel">
+        <iframe
+          frameborder="0"
+          title="output"
+          sandbox="allow-scripts"
+          width="100%"
+          height="100%"
+        />
+      </div>
+    </>
   );
 }
 
