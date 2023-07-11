@@ -20,7 +20,7 @@ export default function Slate(props) {
         <CodeMirror
         onBeforeChange={handleChange}
         value={value}
-        className="code-mirror-wrapper"
+        className="code-slate"
         options={{
           lineWrapping: true,
           lint: true,
