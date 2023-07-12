@@ -19,7 +19,7 @@ code {
 
 .pannel {
   display: flex;
-  height: 50%;
+  height: 50vh;
 }
 
 .editor {
@@ -27,10 +27,26 @@ code {
   flex-grow: 1;
   flex-basis: 0;
   flex-direction: column;
-  background-color: rgb(58, 58, 58);
+  background-color: #2e2e2e;
   padding: 0.5rem;
 }
 
+.editor.close {
+  flex-grow: 0;
+}
+
+.editor.close .CodeMirror-scroll {
+  position: absolute;
+  overflow: hidden !important;
+}
+
+.open-close-btn {
+  background: none;
+  border: 0px;
+  color: white;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
 .editor-header {
   display: flex;
   justify-content: space-between;

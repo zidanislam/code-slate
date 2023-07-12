@@ -13,9 +13,10 @@ function App() {
       setSrcDoc(
         `
         <html>
-        <body>${html}</ body>
-        <style>${css}</ style>
-        <script>${js}</ script>
+
+        <body><font face = "Times New Roman"/>${html}</ body>
+        <style>${css}</style>
+        <script>${js}</script>
         </ html>
         `
       );
@@ -27,7 +28,7 @@ function App() {
     <>
       <div className="pannel slate">
         <Slate
-          language="html"
+          language="xml"
           value={html}
           displayName="HTML"
           onChange={setHtml}
@@ -43,6 +44,7 @@ function App() {
       <div className="pannel">
         <iframe
           srcDoc={srcDoc}
+          className="output"
           frameborder="0"
           title="output"
           sandbox="allow-scripts"
