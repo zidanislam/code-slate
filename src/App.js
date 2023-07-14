@@ -4,9 +4,9 @@ import Slate from "./components/Slate";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [html, setHtml] = useLocalStorage("html","");
-  const [css, setCss] = useLocalStorage("css","");
-  const [js, setJs] = useLocalStorage("js","");
+  const [html, setHtml] = useLocalStorage("html", "");
+  const [css, setCss] = useLocalStorage("css", "");
+  const [js, setJs] = useLocalStorage("js", "");
   const [srcDoc, setSrcDoc] = useState("");
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
     }, 250);
     return () => clearTimeout(delay);
   }, [html, css, js]);
-  
+
   return (
     <>
       <div className="pannel slate">
